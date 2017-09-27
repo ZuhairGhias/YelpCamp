@@ -10,8 +10,10 @@ var indexRoutes = require("./routes/index");
 var campgroundRoutes = require("./routes/campgrounds");
 var commentRoutes = require("./routes/comments");
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://ghiaszuh:ghiaszuh@ds155424.mlab.com:55424/yelpcamp");
+console.log(process.env.DATABASEURL);
+
+mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect("mongodb://ghiaszuh:ghiaszuh@ds155424.mlab.com:55424/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+ "/public")); // Allows us to use scripts and css files in public
