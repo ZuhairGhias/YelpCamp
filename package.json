@@ -1,6 +1,6 @@
 {
-  "name": "v1",
-  "version": "1.0.0",
+  "name": "v2",
+  "version": "2.0.0",
   "description": "YelpCamp version 1.0",
   "main": "app.js",
   "scripts": {
