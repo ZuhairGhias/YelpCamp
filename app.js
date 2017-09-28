@@ -10,7 +10,7 @@ var indexRoutes = require("./routes/index");
 var campgroundRoutes = require("./routes/campgrounds");
 var commentRoutes = require("./routes/comments");
 
-console.log(process.env.DATABASEURL);
+//console.log(process.env.DATABASEURL);
 
 mongoose.connect(process.env.DATABASEURL);
 //mongoose.connect("mongodb://ghiaszuh:ghiaszuh@ds155424.mlab.com:55424/yelpcamp");
