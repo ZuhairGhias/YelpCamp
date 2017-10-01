@@ -6,20 +6,21 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var User = require("./models/user");
 var seedDB = require("./seeds");
+var methodOverride = require("method-override");
 var indexRoutes = require("./routes/index");
 var campgroundRoutes = require("./routes/campgrounds");
 var commentRoutes = require("./routes/comments");
 
-//console.log(process.env.DATABASEURL);
+console.log(process.env.DATABASEURL);
 
 mongoose.connect(process.env.DATABASEURL);
 //mongoose.connect("mongodb://ghiaszuh:ghiaszuh@ds155424.mlab.com:55424/yelpcamp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+ "/public")); // Allows us to use scripts and css files in public
+app.use(methodOverride("_method"))
 
-
-seedDB();
+//seedDB();
 
 // Passport Configuration
 app.use(require("express-session")({
